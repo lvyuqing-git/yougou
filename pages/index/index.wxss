@@ -19,3 +19,22 @@ icon{
   vertical-align: middle;
   margin-right: 5px;
 }
+/* //轮播图 */
+.swiper swiper{
+  height: 300rpx;
+}
+.swiper swiper-item image{
+  height: 300rpx;
+  width: 750rpx;
+}
+
+/* 导航菜单 */
+.navmenu{
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx;
+}
+.navmenu image{
+  width: 128rpx;
+  height: 140rpx;
+}
