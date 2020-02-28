@@ -1,1 +1,79 @@
 /* pages/category/index.wxss */
+.searchbox{
+  background: #ff2d4a;
+  padding: 20rpx;
+}
+.search{
+  height: 60rpx;
+  background: #fff;
+  text-align: center;
+  font-size: 26rpx;
+  box-sizing: border-box;
+  align-items: center;
+  line-height: 60rpx;
+  color: #bbbbbb;
+}
+/* 栏目列表 */
+.columnList{
+  display: flex;
+}
+/* 左栏目列表 */
+.columnlistleft{
+  background: #f4f4f4;
+  width: 200rpx;
+  min-width: 200rpx;
+  font-size: 26rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+.columnitem{
+  border-bottom: 1px solid #eeeeee;
+}
+.active{
+  color: #eb4753;
+}
+/* 右栏目列表 */
+
+.rightlist{
+  max-width: 550rpx;
+  border: 1px solid red;
+}
+.decorate {
+  padding: 20rpx;
+}
+.decorate image {
+  width: 520rpx;
+  height:  188rpx;
+}
+
+/* 分类主体 */
+/* .commodititem{
+} */
+.commoditytitle{
+ 
+  text-align: center;
+  margin: 20rpx;
+  color: #e0e0e0;
+}
+.iconcontent{
+  margin: 0 20rpx;
+  color: black;
+}
+
+.commoditlist{
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 20rpx;
+}
+.shanping{
+  width: 33%;
+  box-sizing: border-box;
+  text-align: center;
+  padding:20rpx 35rpx;
+}
+/* 分类主题图片 */
+.shanping .img{
+  width: 120rpx;
+  height: 120rpx;
+  display: block;
+}

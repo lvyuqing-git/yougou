@@ -1,2 +1,45 @@
-<!--pages/category/index.wxml-->
-<text>pages/category/index.wxml</text>
+<view>
+  <!-- 搜索框 -->
+  <view class="searchbox">
+    <view class="search">
+      <text class="iconfont icon-home"></text> 搜索
+    </view>
+  </view>
+  <!-- 分类栏目 -->
+  <view class="columnList">
+    <!-- 左侧边栏 -->
+    <view class="columnlistleft">
+      <view wx:for="{{columnList}}" wx:key="index" class="columnitem {{current == index ? 'active' : ''}}" bindtap="columnClick" data-index="{{index}}">
+        {{item.cat_name}}
+      </view>
+    </view>
+    <!-- 右边产品列表 -->
+    <view class="columnlistright">
+      <view class="decorate">
+        <image src="../../images/decorate.png"></image>
+      </view>
+      <!-- /* 分类主体  -->
+
+      <view class="commodititem" wx:for="{{columnList[current].children}}" wx:key="index">
+        <view class="commoditytitle">
+          <text>/</text>
+          <text class="iconcontent">{{item.cat_name}}</text>
+          <text>/</text>
+        </view>
+        <view class="commoditlist">
+          <block wx:for="{{item.children}}" wx:key="index">
+            <view class="shanping">
+            <image src="{{item.cat_icon}}" class="img"></image>
+            <text>{{item.cat_name}}</text>
+            </view>
+          </block>
+        </view>
+
+
+      </view>
+
+
+    </view>
+
+  </view>
+</view>
