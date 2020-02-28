@@ -1,4 +1,5 @@
 <view>
+  <!-- 搜索框 -->
   <view class="title">
     <view class="searchbox">
       <view class="search">
@@ -6,6 +7,7 @@
       </view>
     </view>
   </view>
+  <!-- 轮播图 -->
   <view class="swiper">
     <swiper indicator-color='rgba(255,255,255,0.5)' indicator-dots indicator-active-color='rgba(255,255,255,1)' circular>
       <block wx:for="{{swiperList}}" wx:key="index">
@@ -15,10 +17,26 @@
       </block>
     </swiper>
   </view>
+  <!-- 导航菜单 -->
   <view class="navmenu">
     <block wx:for="{{navmenuList}}" wx:key="index">
       <image src="{{item.image_src}}"></image>
     </block>
-
+  </view>
+  <!-- 商品楼层 -->
+  <view class="floor" wx:for="{{floorList}}" wx:key="index">
+    <view class="floortitle">
+      <image src="{{item.floor_title.image_src}}" mode="aspectFill"></image>
+    </view>
+    <view class="commodity">
+      <view class="commodityleft">
+        <image src="{{item.product_list[0].image_src}}" mode="aspectFill"></image>
+      </view>
+      <view class="commodityright">
+        <block wx:for="{{item.product_list}}"  wx:key="index" wx:if="{{index > 0}}">
+          <image src="{{item.image_src}}" mode="aspectFill"></image>
+        </block>
+      </view>
+    </view>
   </view>
 </view>
