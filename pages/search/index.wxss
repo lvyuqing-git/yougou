@@ -1,1 +1,69 @@
-/* pages/search/index.wxss */
+/* 搜索框 */
+.searchbox {
+  display: flex;
+  justify-content: space-between;
+  background: #efefef;
+  padding: 20rpx;
+}
+
+.searchbox .search {
+  flex: 1;
+  display: flex;
+  border-radius: 5px;
+  align-items: center;
+  background: #fff;
+  margin-right: 20rpx;
+  box-sizing: border-box;
+  font-size: 26rpx;
+}
+
+.searchbox .cancel button {
+  width: 160rpx;
+  font-size: 24rpx;
+  color: #4b4b4b;
+}
+
+
+/* 搜索历史 */
+.history{
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx; 
+  font-size: 26rpx;
+}
+.history view{
+  width: 30rpx;
+  height: 30rpx;
+  background:#d0d0d0;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30rpx;
+  position: relative;
+}
+.history view::before,.history view::after{
+ content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+   width: 1px;
+  height: 20rpx;
+  background: #fff;
+}
+.history view::before{
+  transform: translate(-50%,-50%) rotate(45deg);
+}
+.history view::after{
+  transform: translate(-50%,-50%) rotate(-45deg)
+}
+.historysearch{
+  display: flex;
+  flex-wrap: wrap;
+}
+.historysearch view{
+  padding: 20rpx 30rpx;
+  background:#d0d0d0;
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+  font-size: 24rpx;
+}

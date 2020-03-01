@@ -1,2 +1,23 @@
-<!--pages/search/index.wxml-->
-<text>pages/search/index.wxml</text>
+<view>
+<!-- 搜索框 -->
+  <view class="searchbox">
+    <view class="search">
+      <icon type="search"></icon>
+      <input placeholder="请输入你想要的商品"></input>
+    </view>
+    <view class="cancel">
+      <button>取消</button>
+    </view>
+  </view>
+  <!-- 历史搜索 -->
+  <view class="history">
+  历史搜索
+  <view></view>
+  </view>
+  <view class="historysearch">
+    <view>小米</view>
+    <view>小米智能电视</view>
+    <view>小米空气净化器</view>
+    <view>西门子洗碗机</view>
+  </view>
+</view>
