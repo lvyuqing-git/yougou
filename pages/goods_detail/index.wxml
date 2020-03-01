@@ -1,2 +1,39 @@
-<!--pages/goods_detail/index.wxml-->
-<text>pages/goods_detail/index.wxml</text>
+<view>
+  <!-- 底部操作栏 -->
+  <view class="operation">
+    <view>
+      <text class="iconfont icon-kefu"></text> 联系客服
+    </view>
+    <view>
+      <text class="iconfont icon-gouwuche"></text> 购物车
+    </view>
+    <view>
+      加入购物车
+    </view>
+    <view>
+      立即购买
+    </view>
+  </view>
+  <!-- 轮播图 -->
+  <view class="swiper">
+
+  </view>
+
+  <view class="comodity">
+    <view class="price">
+      ￥279
+    </view>
+    <view class="commodityname">
+      <view class="left">
+        初语初语初语初语初语初语初语初初语初语初语初语初语初语初语初
+      </view>
+      <view class="right">
+        <text class="iconfont icon-shoucang"></text> 收藏
+      </view>
+    </view>
+    <view class="expressage">
+      <text>快递：免运费</text>
+    </view>
+  </view>
+
+</view>
