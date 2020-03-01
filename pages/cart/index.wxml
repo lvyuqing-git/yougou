@@ -1,0 +1,6 @@
+<view>
+  <view class="sccar">
+    <image src="../../images/cart_empty@2x.png" mode="aspectFill"></image>
+    你还没有添加任何商品
+  </view>
+</view>
