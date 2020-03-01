@@ -10,8 +10,8 @@
     <view bindtap="clickList" wx:for="{{list}}" wx:key="key" data-index="{{index}}" class="{{index == listNumber ? 'active' : ''}}">{{item}}</view>
     <text class="triangle"></text>
   </view>
-  <view>
-    <view wx:for="{{commodityData}}" wx:key="index" class="commodityitem">
+  <view bindtap="">
+    <view wx:for="{{commodityData}}" wx:key="index" class="commodityitem" bindtap="clickGoods" data-id="{{item.goods_id}}">
       <view class="left"> 
       <image src="{{item.goods_big_logo}}" mode="widthFix"></image> 
       </view>

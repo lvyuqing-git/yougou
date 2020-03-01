@@ -9,6 +9,13 @@ Page({
     isMax: true,
     list: ['综合', '销量', '价格']
   },
+  //点击商品
+  clickGoods(e){
+    wx.navigateTo({
+      url: '../goods_detail/index?goods_id=' + e.currentTarget.dataset.id
+    })
+  },
+  //点击栏目
   clickList(e) {
     let index = e.currentTarget.dataset.index
     this.setData({
@@ -98,7 +105,6 @@ Page({
         pagesize: 10 //页数量
       }
     }).then((res) => {
-      console.log(res)
       this.setData({
         commodityData: res.data.message.goods,
         commodityCopyData: [...res.data.message.goods]
