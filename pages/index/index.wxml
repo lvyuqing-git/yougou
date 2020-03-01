@@ -1,12 +1,6 @@
 <view>
   <!-- 搜索框 -->
-  <view class="title">
-    <view class="searchbox">
-      <view class="search">
-        <icon type="search" />搜索
-      </view>
-    </view>
-  </view>
+ <search></search>
   <!-- 轮播图 -->
   <view class="swiper">
     <swiper indicator-color='rgba(255,255,255,0.5)' indicator-dots indicator-active-color='rgba(255,255,255,1)' circular>

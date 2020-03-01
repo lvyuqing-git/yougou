@@ -1,10 +1,6 @@
 <view>
   <!-- 搜索框 -->
-  <view class="searchbox">
-    <view class="search">
-      <text class="iconfont icon-home"></text> 搜索
-    </view>
-  </view>
+  <search></search>
   <!-- 分类栏目 -->
   <view class="columnList">
     <!-- 左侧边栏 -->
@@ -27,10 +23,10 @@
           <text>/</text>
         </view>
         <view class="commoditlist">
-          <block wx:for="{{item.children}}" wx:key="index">
-            <view class="shanping">
-            <image src="{{item.cat_icon}}" class="img"></image>
-            <text>{{item.cat_name}}</text>
+          <block wx:for="{{item.children}}" wx:key="index"  >
+            <view class="shangpin" bindtap="commodityClick" data-itemdata="{{item}}">
+              <image src="{{item.cat_icon}}" class="img"></image>
+              <text>{{item.cat_name}}</text>
             </view>
           </block>
         </view>

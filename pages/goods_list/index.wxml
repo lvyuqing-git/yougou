@@ -1,0 +1,24 @@
+<view>
+  <!-- 顶部搜索框 -->
+  <view class="headersearchbox">
+    <view class="search">
+      <icon type="search"></icon>小米
+    </view>
+  </view>
+  <!-- 分类栏 -->
+  <view class="columnlist">
+    <view bindtap="clickList" wx:for="{{list}}" wx:key="key" data-index="{{index}}" class="{{index == listNumber ? 'active' : ''}}">{{item}}</view>
+    <text class="triangle"></text>
+  </view>
+  <view>
+    <view wx:for="{{commodityData}}" wx:key="index" class="commodityitem">
+      <view class="left"> 
+      <image src="{{item.goods_big_logo}}" mode="widthFix"></image> 
+      </view>
+      <view class="right">
+        <view class="commodityname">{{item.goods_name}}</view>
+        <view class="price">￥{{item.goods_price}}</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,5 +1,12 @@
 import request from '../../utils/request.js'
 Page({
+  commodityClick(e){
+    let cid = e.currentTarget.dataset.itemdata.cat_id
+    let query = e.currentTarget.dataset.itemdata.cat_name
+    wx.navigateTo({
+      url: `../goods_list/index?id=${cid}&query=${query}`
+    })
+  },
   data : {
     columnList : [],
     current : 0
@@ -8,7 +15,6 @@ Page({
       request({
         url: '/api/public/v1/categories'
       }).then((res)=>{
-        console.log(res)
         this.setData({
           columnList : res.data.message
         })

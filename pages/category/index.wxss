@@ -1,21 +1,10 @@
-/* pages/category/index.wxss */
-.searchbox{
-  background: #ff2d4a;
-  padding: 20rpx;
-}
-.search{
-  height: 60rpx;
-  background: #fff;
-  text-align: center;
-  font-size: 26rpx;
-  box-sizing: border-box;
-  align-items: center;
-  line-height: 60rpx;
-  color: #bbbbbb;
-}
+
 /* 栏目列表 */
 .columnList{
   display: flex;
+  position: fixed;
+  top: 115rpx;
+  bottom: 0;
 }
 /* 左栏目列表 */
 .columnlistleft{
@@ -25,18 +14,34 @@
   font-size: 26rpx;
   line-height: 100rpx;
   text-align: center;
+  height: 100%;
+  overflow: auto;
 }
 .columnitem{
   border-bottom: 1px solid #eeeeee;
+  position: relative;
 }
 .active{
   color: #eb4753;
 }
+.active::after{
+ content: '';
+ display: block;
+ position: absolute;
+ top: 50%;
+ transform: translate(0,-50%);
+ height: 20px;
+ width: 3px;
+ background: red;
+
+}
 /* 右栏目列表 */
 
-.rightlist{
+.columnlistright{
   max-width: 550rpx;
-  border: 1px solid red;
+  height: 100%;
+  overflow: auto;
+
 }
 .decorate {
   padding: 20rpx;
@@ -65,14 +70,14 @@
   flex-wrap: wrap;
   font-size: 20rpx;
 }
-.shanping{
+.shangpin{
   width: 33%;
   box-sizing: border-box;
   text-align: center;
   padding:20rpx 35rpx;
 }
 /* 分类主题图片 */
-.shanping .img{
+.shangpin .img{
   width: 120rpx;
   height: 120rpx;
   display: block;

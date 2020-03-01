@@ -1,0 +1,7 @@
+<view class="title">
+    <view class="searchbox">
+      <view class="search">
+        <icon type="search" />搜索
+      </view>
+    </view>
+  </view>
