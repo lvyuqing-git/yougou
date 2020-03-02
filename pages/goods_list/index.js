@@ -3,6 +3,8 @@ Page({
   data: {
     //加载状态
     isLoad: true,
+    //函数防抖
+    isLoading : false,
     listNumber: 0,
     //商品列表
     commodityData: {},
@@ -14,8 +16,13 @@ Page({
   },
   // 下拉触底
   onReachBottom() {
+    if(this.data.isLoading === false){
+      console.log('falsefalsefalsefalsefalsefalsefalsefalsefalsefalse')
+      return
+    }
     this.setData({
       pagenum: this.data.pagenum + 1,
+      isLoading : false
     })
     this.init()
     if (this.data.commodityData.length >= this.data.total) {
@@ -120,7 +127,8 @@ Page({
       this.setData({
         commodityData: [...this.data.commodityCopyData, ...res.data.message.goods],
         commodityCopyData: [...this.data.commodityCopyData, ...res.data.message.goods],
-        total: res.data.message.total
+        total: res.data.message.total,
+        isLoading : true
       })
     })
   },
