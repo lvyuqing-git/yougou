@@ -21,11 +21,11 @@
 
   <view class="comodity">
     <view class="price">
-      ￥279
+      ￥{{commodityInfo.goods_price}}
     </view>
     <view class="commodityname">
       <view class="left">
-        初语初语初语初语初语初语初语初初语初语初语初语初语初语初语初
+       {{commodityInfo.goods_name}}
       </view>
       <view class="right">
         <text class="iconfont icon-shoucang"></text> 收藏
@@ -34,6 +34,6 @@
     <view class="expressage">
       <text>快递：免运费</text>
     </view>
+    <rich-text nodes="{{commodityInfo.goods_introduce}}" bindtap="tap"></rich-text>
   </view>
-
 </view>

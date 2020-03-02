@@ -3,7 +3,7 @@ Page({
 
 
   data: {
-    isShow : true,
+    carData : false,
   },
 
   onLoad: function (options) {

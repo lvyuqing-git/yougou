@@ -16,3 +16,67 @@
   height: 180rpx;
   padding-bottom: 50rpx;
 }
+
+/* //收货人信息 */
+.userinfo{
+  padding: 20rpx;
+  font-size: 30rpx;
+}
+.consignee{
+  padding-bottom: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 花条 */
+.flower image{
+  height: 16rpx;
+}
+/* 优购生活馆 */
+.excellent{
+  padding: 20rpx;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 30rpx;
+}
+.shangpinitem{
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0; 
+
+}
+.shangpinitem .btn{
+  margin: 0 20rpx;
+  flex-shrink: 0;
+}
+.shangpin{
+  display: flex;
+}
+.shangpin .left{
+  width: 100rpx;
+  height: 160rpx;
+  border: 1px solid red;
+}
+.shangpin .right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 20rpx;
+  position: relative;
+}
+.shangpin .right .operation{
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  right: 0;
+}
+ .right .operation view{
+   width: 52rpx;
+   height: 42rpx;
+   border: 1px solid black;
+   text-align: center;
+   line-height: 42rpx;
+   font-size: 30rpx;
+}
+.right .operation view.textcenter{
+  border: none;
+}

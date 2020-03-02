@@ -61,6 +61,12 @@
   padding-right: 80rpx;
   box-sizing: border-box;
   font-size: 30rpx;
+  overflow: hidden;
+  line-height: 45rpx;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .right {
