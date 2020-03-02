@@ -1,6 +1,12 @@
 <view>
-  <view class="sccar">
+<!-- 没有商品状态购物车样式 -->
+  <view class="sccar" wx:if="{{isShow}}">
     <image src="../../images/cart_empty@2x.png" mode="aspectFill"></image>
     你还没有添加任何商品
+  </view>
+  
+<!-- 有商品状态购物车样式 -->
+  <view>
+  
   </view>
 </view>

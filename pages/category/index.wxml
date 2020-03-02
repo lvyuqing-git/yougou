@@ -25,7 +25,7 @@
         <view class="commoditlist">
           <block wx:for="{{item.children}}" wx:key="index"  >
             <view class="shangpin" bindtap="commodityClick" data-itemdata="{{item}}">
-              <image src="{{item.cat_icon}}" class="img"></image>
+              <image src="{{item.cat_icon}}" class="img" mode="aspectFill"></image>
               <text>{{item.cat_name}}</text>
             </view>
           </block>

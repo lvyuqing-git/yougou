@@ -7,10 +7,19 @@ Page({
     //复制数据
     commodityCopyData: {},
     isMax: true,
-    list: ['综合', '销量', '价格']
+    list: ['综合', '销量', '价格'],
+    options: {}, // 路由参数
+    pagenum: 1,
+  },
+  // 下拉触底
+  onReachBottom() {
+    this.setData({
+      pagenum: this.data.pagenum + 1
+    })
+    this.init()
   },
   //点击商品
-  clickGoods(e){
+  clickGoods(e) {
     wx.navigateTo({
       url: '../goods_detail/index?goods_id=' + e.currentTarget.dataset.id
     })
@@ -93,23 +102,25 @@ Page({
       commodityData: arr
     })
   },
-  onLoad(options) {
+  init() {
     request({
       url: '/api/public/v1/goods/search',
       data: {
-        query: options.query,
-        cid: options.id,
-        // query: "啤酒",
-        // cid: 363,
-        pagenum: 0,   //页码
+        query: this.data.options.query,
+        pagenum: this.data.pagenum,   //页码
         pagesize: 10 //页数量
       }
     }).then((res) => {
       this.setData({
-        commodityData: res.data.message.goods,
-        commodityCopyData: [...res.data.message.goods]
+        commodityData: [...this.data.commodityCopyData, ...res.data.message.goods],
+        commodityCopyData: [...this.data.commodityCopyData, ...res.data.message.goods]
       })
-
     })
+  },
+  onLoad(options) {
+    this.setData({
+      options: options
+    })
+    this.init()
   }
 })
