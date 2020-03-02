@@ -1,22 +1,28 @@
 import request from '../../utils/request.js'
 Page({
   data: {
+    //加载状态
+    isLoad: true,
     listNumber: 0,
     //商品列表
     commodityData: {},
     //复制数据
     commodityCopyData: {},
     isMax: true,
-    list: ['综合', '销量', '价格'],
     options: {}, // 路由参数
     pagenum: 1,
   },
   // 下拉触底
   onReachBottom() {
     this.setData({
-      pagenum: this.data.pagenum + 1
+      pagenum: this.data.pagenum + 1,
     })
     this.init()
+    if (this.data.commodityData.length >= this.data.total) {
+       this.setData({
+         isLoad: false
+       })
+    }
   },
   //点击商品
   clickGoods(e) {
@@ -113,7 +119,8 @@ Page({
     }).then((res) => {
       this.setData({
         commodityData: [...this.data.commodityCopyData, ...res.data.message.goods],
-        commodityCopyData: [...this.data.commodityCopyData, ...res.data.message.goods]
+        commodityCopyData: [...this.data.commodityCopyData, ...res.data.message.goods],
+        total: res.data.message.total
       })
     })
   },

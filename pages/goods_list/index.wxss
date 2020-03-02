@@ -92,3 +92,7 @@
 .right .price {
   color: #ec5965;
 }
+.load{
+  padding-top: 20rpx;
+  text-align: center;
+}

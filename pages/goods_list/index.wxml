@@ -2,12 +2,12 @@
   <!-- 顶部搜索框 -->
   <view class="headersearchbox">
     <view class="search">
-      <icon type="search"></icon>小米
+      <icon type="search"></icon>{{options.query}}
     </view>
   </view>
   <!-- 分类栏 -->
   <view class="columnlist">
-    <view bindtap="clickList" wx:for="{{list}}" wx:key="key" data-index="{{index}}" class="{{index == listNumber ? 'active' : ''}}">{{item}}</view>
+    <view bindtap="clickList" wx:for="{{['综合', '销量', '价格']}}" wx:key="key" data-index="{{index}}" class="{{index == listNumber ? 'active' : ''}}">{{item}}</view>
     <text class="triangle"></text>
   </view>
   <view bindtap="">
@@ -20,5 +20,10 @@
         <view class="price">￥{{item.goods_price}}</view>
       </view>
     </view>
+  </view>
+  <!-- 加载中 -->
+  <view class="load">
+    <text wx:if="{{isLoad}}">加载中...</text>
+    <text wx:if="{{!isLoad}}">一点也没有了...</text>
   </view>
 </view>
