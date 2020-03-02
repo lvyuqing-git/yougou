@@ -1,28 +1,29 @@
 <view>
-<!-- 搜索框 -->
+  <!-- 搜索框 -->
   <view class="searchbox">
     <view class="search">
       <icon type="search"></icon>
-      <input placeholder="请输入你想要的商品" bindinput="inputSerach" focus="true" ></input>
+      <input placeholder="请输入你想要的商品" bindinput="inputSerach" focus="true"></input>
     </view>
     <view class="cancel">
-      <button>取消</button>
+      <button>搜索</button>
     </view>
   </view>
   <!-- 历史搜索 -->
-  <view class="history"  wx:if="{{isShow}}">
-  历史搜索
-  <view></view>
+  <view class="history" wx:if="{{isShow}}">
+    历史搜索
+    <view></view>
   </view>
   <view class="historysearch" wx:if="{{isShow }}">
     <view wx:for="{{searchHistoryList}}" wx:key="index">{{item}}</view>
   </view>
   <!-- 搜索时显示的表单 -->
   <view>
-    <!-- <view wx:for="{{inputSearchList}}" wx:key="index">{{item.goods_name}}</view> -->
-    <view class="inputsearchitem">
-      <text class="iconfont icon-sousuokuang"></text>
-      <text>巴拉巴拉巴拉</text>
+    <view wx:for="{{inputSearchList}}" wx:key="index" class="inputsearchitem">
+      <navigator url="../goods_list/index?query={{value}}">
+        <text class="iconfont icon-sousuokuang"></text>
+        <text class="text">{{item.goods_name}}</text>
+      </navigator>
     </view>
   </view>
 </view>
