@@ -1,4 +1,15 @@
 <view>
+  <!-- 底部操作栏 -->
+  <view class="accounts">
+    <view class="left">全选</view>
+    <view class="center">
+      <view class="centerbox">
+        <text>合计：￥10000.00</text>
+        <text>包含运费</text>
+      </view>
+    </view>
+    <view class="right">结算（3）</view>
+  </view>
   <!-- 没有商品状态购物车样式 -->
   <view class="sccar" wx:if="{{carData}}">
     <image src="../../images/cart_empty@2x.png" mode="aspectFill"></image>
@@ -23,26 +34,26 @@
     <text class="iconfont icon-dianpu"></text> 优购生活馆
   </view>
   <!-- 购物商品列表 -->
- <checkbox-group>
-  <label class="checkbox">
-    <view class="shangpinitem">
-      <view class="btn">
-      <checkbox value="" checked=""/>
-      </view>
-    <view class="shangpin">
-      <view class="left">
-      </view>
-      <view class="right">
-        <text>出出出粗出出出出出粗话粗粗</text>
-        <text>￥279</text>
-        <view class="operation">
-          <view>-</view>
-          <view class="textcenter">3</view>
-          <view>+</view>
+  <checkbox-group>
+    <label class="checkbox">
+      <view class="shangpinitem">
+        <view class="btn">
+          <checkbox value="" checked="" />
+        </view>
+        <view class="shangpin">
+          <view class="left">
+          </view>
+          <view class="right">
+            <text>出出出粗出出出出出粗话粗粗</text>
+            <text>￥279</text>
+            <view class="operation">
+              <view>-</view>
+              <view class="textcenter">3</view>
+              <view>+</view>
+            </view>
+          </view>
         </view>
       </view>
-    </view>
-    </view>
-  </label>
-</checkbox-group>
+    </label>
+  </checkbox-group>
 </view>

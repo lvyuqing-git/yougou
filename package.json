@@ -1,0 +1,22 @@
+{
+  "name": "yougou",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lvyuqing-git/yougou.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lvyuqing-git/yougou/issues"
+  },
+  "homepage": "https://github.com/lvyuqing-git/yougou#readme",
+  "dependencies": {
+    "vant": "^2.5.3"
+  }
+}
