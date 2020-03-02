@@ -6,16 +6,16 @@
       <input placeholder="请输入你想要的商品" bindinput="inputSerach" focus="true"></input>
     </view>
     <view class="cancel">
-      <button>搜索</button>
+      <button bindtap="searchHistory">搜索</button>
     </view>
   </view>
   <!-- 历史搜索 -->
-  <view class="history" wx:if="{{isShow}}">
+  <view class="history" wx:if="{{!value}}">
     历史搜索
     <view></view>
   </view>
-  <view class="historysearch" wx:if="{{isShow }}">
-    <view wx:for="{{searchHistoryList}}" wx:key="index">{{item}}</view>
+  <view class="historysearch" wx:if="{{!value}}">
+    <view wx:for="{{searchHistoryList}}" wx:key="index" bindtap="clickHistory" data-value="{{item}}">{{item}}</view>
   </view>
   <!-- 搜索时显示的表单 -->
   <view>
