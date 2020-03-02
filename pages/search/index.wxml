@@ -3,18 +3,18 @@
   <view class="searchbox">
     <view class="search">
       <icon type="search"></icon>
-      <input placeholder="请输入你想要的商品"></input>
+      <input placeholder="请输入你想要的商品" bindinput="inputSerach" focus="true" ></input>
     </view>
     <view class="cancel">
       <button>取消</button>
     </view>
   </view>
   <!-- 历史搜索 -->
-  <view class="history">
+  <view class="history"  wx:if="{{isShow}}">
   历史搜索
   <view></view>
   </view>
-  <view class="historysearch">
+  <view class="historysearch" wx:if="{{isShow}}">
     <view>小米</view>
     <view>小米智能电视</view>
     <view>小米空气净化器</view>

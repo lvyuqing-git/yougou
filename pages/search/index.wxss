@@ -16,7 +16,9 @@
   box-sizing: border-box;
   font-size: 26rpx;
 }
-
+.searchbox .search input{
+  width: 100%;
+}
 .searchbox .cancel button {
   width: 160rpx;
   font-size: 24rpx;
