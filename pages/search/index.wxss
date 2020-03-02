@@ -69,3 +69,14 @@
   margin-bottom: 20rpx;
   font-size: 24rpx;
 }
+
+/* 搜索结果列表 */
+.inputsearchitem{
+  border: 1px solid red;
+  display: felx;
+   font-size: 24rpx;
+   line-height: 30rpx;
+}
+.inputsearchitem icon{
+  vertical-align: bottom;
+}

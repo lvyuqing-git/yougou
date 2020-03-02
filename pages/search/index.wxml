@@ -14,10 +14,15 @@
   历史搜索
   <view></view>
   </view>
-  <view class="historysearch" wx:if="{{isShow}}">
-    <view>小米</view>
-    <view>小米智能电视</view>
-    <view>小米空气净化器</view>
-    <view>西门子洗碗机</view>
+  <view class="historysearch" wx:if="{{isShow }}">
+    <view wx:for="{{searchHistoryList}}" wx:key="index">{{item}}</view>
+  </view>
+  <!-- 搜索时显示的表单 -->
+  <view>
+    <!-- <view wx:for="{{inputSearchList}}" wx:key="index">{{item.goods_name}}</view> -->
+    <view class="inputsearchitem">
+      <text class="iconfont icon-sousuokuang"></text>
+      <text>巴拉巴拉巴拉</text>
+    </view>
   </view>
 </view>
