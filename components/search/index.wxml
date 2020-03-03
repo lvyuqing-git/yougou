@@ -1,3 +1,4 @@
+<navigator url="../../pages/search/index" hover-class="none">
 <view class="title">
     <view class="searchbox">
       <view class="search">
@@ -5,3 +6,4 @@
       </view>
     </view>
   </view>
+</navigator>

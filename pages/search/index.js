@@ -4,7 +4,7 @@ Page({
   data : {
     inputSearchList : { },//搜索数据列表
     isShow : true, //是否显示搜索历史
-    searchHistoryList : ['小米'],//搜索历史列表
+    searchHistoryList : [],//搜索历史列表
     value : '',//搜素框的值
   },
   init(){
