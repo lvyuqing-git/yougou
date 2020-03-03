@@ -2,18 +2,20 @@
 
 .searchbox {
   display: flex;
+  
   justify-content: space-between;
   background: #efefef;
   padding: 20rpx;
+
 }
 
 .searchbox .search {
-  flex: 1;
+ width: 100%;
   display: flex;
   border-radius: 5px;
   align-items: center;
   background: #fff;
-  margin-right: 20rpx;
+ 
   box-sizing: border-box;
   font-size: 26rpx;
 }
@@ -26,6 +28,7 @@
   width: 160rpx;
   font-size: 24rpx;
   color: #4b4b4b;
+   margin-left: 20rpx;
 }
 
 /* 搜索历史 */

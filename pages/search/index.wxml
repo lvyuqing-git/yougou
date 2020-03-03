@@ -3,10 +3,10 @@
   <view class="searchbox">
     <view class="search">
       <icon type="search"></icon>
-      <input placeholder="请输入你想要的商品" bindinput="inputSerach" focus="true"></input>
+      <input placeholder="请输入你想要的商品" bindinput="inputSerach" focus="true" bindconfirm="searchHistory" value="{{value}}"></input>
     </view>
     <view class="cancel">
-      <button bindtap="searchHistory" wx:if="{{value}}">取消</button>
+      <button wx:if="{{value}}" bindtap="cancel">取消</button>
     </view>
   </view>
   <!-- 历史搜索 -->
