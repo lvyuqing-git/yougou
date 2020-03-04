@@ -17,7 +17,6 @@ Page({
   // 下拉触底
   onReachBottom() {
     if(this.data.isLoading === false){
-      console.log('falsefalsefalsefalsefalsefalsefalsefalsefalsefalse')
       return
     }
     this.setData({
@@ -81,8 +80,6 @@ Page({
   },
   // 价格
   price() {
-    const query = wx.createSelectorQuery()
-    console.log(query.select('.triangle').boundingClientRect())
     let arr = this.data.commodityData
     let obj = {}
     this.setData({

@@ -14,6 +14,14 @@ Page({
       searchHistoryList: wx.getStorageSync('history')
     })
   },
+  //失去焦点
+  unfocused(e){
+    if (!e.target.dataset.onlyid){
+      this.setData({
+        inputSearchList : []
+      })
+    }
+  },
   init() {
     if (this.data.isLoad === false) {
       this.setData({

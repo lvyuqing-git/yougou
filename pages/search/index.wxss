@@ -2,7 +2,6 @@
 
 .searchbox {
   display: flex;
-  
   justify-content: space-between;
   background: #efefef;
   padding: 20rpx;
@@ -30,6 +29,11 @@
   color: #4b4b4b;
    margin-left: 20rpx;
 }
+
+.contai{
+  height: 100vh;
+}
+
 
 /* 搜索历史 */
 
@@ -83,13 +87,16 @@
 }
 
 /* 搜索结果列表 */
-
+.list{
+ height: 60vh;
+  overflow: hidden;
+}
 .inputsearchitem {
   display: felx;
   font-size: 24rpx;
   padding: 20rpx;
   border-bottom: 1px solid #eee;
-
+ 
 }
 
 .inputsearchitem .iconfont {

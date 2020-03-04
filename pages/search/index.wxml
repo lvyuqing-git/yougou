@@ -1,4 +1,4 @@
-<view>
+<view bindtap="unfocused" class="contai">
   <!-- 搜索框 -->
   <view class="searchbox">
     <view class="search">
@@ -18,9 +18,10 @@
     <view wx:for="{{searchHistoryList}}" wx:key="index" bindtap="clickHistory" data-value="{{item}}">{{item}}</view>
   </view>
   <!-- 搜索时显示的表单 -->
-  <view>
-    <view wx:for="{{inputSearchList}}" wx:key="index" class="inputsearchitem">
-      <navigator url="../goods_list/index?query={{value}}">
+  <view class="list" >
+    <view wx:for="{{inputSearchList}}" wx:key="index" class="inputsearchitem" data-onlyId="onlyId">
+      <!-- <navigator url="../goods_list/index?query={{value}}"> -->
+      <navigator >
         <text class="iconfont icon-sousuokuang"></text>
         <text class="text">{{item.goods_name}}</text>
       </navigator>
