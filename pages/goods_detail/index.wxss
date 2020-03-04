@@ -10,7 +10,14 @@
   bottom: 0;
   background: #fff;
 }
-
+.btn{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20vw;
+  overflow: hidden;
+  opacity: 0;
+}
 .operation view {
   display: flex;
   flex-direction: column;
@@ -21,13 +28,13 @@
   font-size: 20rpx;
 }
 
-.operation view:nth-child(3) {
+.operation view.addcar {
   background: #f4b73f;
   font-size: 30rpx;
   color: #fff;
 }
 
-.operation view:nth-child(4) {
+.operation view.nowpurchase {
   background: #eb4450;
   font-size: 30rpx;
   color: #fff;

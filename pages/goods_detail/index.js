@@ -2,7 +2,8 @@ import request from '../../utils/request.js'
 Page({
   data: {
     commodityInfo : {},
-    urls : []
+    urls : [],
+    id : ''
   },
   previewImage(e){
     let { index } = e.currentTarget.dataset
@@ -12,7 +13,15 @@ Page({
       urls: this.data.urls // 需要预览的图片http链接列表
     })
   },
+  addCar(){
+    wx.switchTab({
+      url: '../cart/index?goods_id='+this.data.id
+    })
+  },
   onLoad: function (options) {
+    this.setData({
+      id: options.goods_id
+    })
     request({
       url: '/api/public/v1/goods/detail',
       data : {

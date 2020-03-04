@@ -1,16 +1,19 @@
 <view>
   <!-- 底部操作栏 -->
   <view class="operation">
+  <view class="btn">
+    <button open-type="contact" >进入客服会话</button>
+  </view>
     <view>
       <text class="iconfont icon-kefu"></text> 联系客服
     </view>
     <view>
       <text class="iconfont icon-gouwuche"></text> 购物车
     </view>
-    <view>
+    <view class="addcar" bindtap="addCar">
       加入购物车
     </view>
-    <view>
+    <view class="nowpurchase">
       立即购买
     </view>
   </view>
