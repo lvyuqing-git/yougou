@@ -12,6 +12,7 @@
   align-items: center;
   font-size: 26rpx;
   background: #fff;
+  padding-left: 20rpx;
 }
 
 .accounts >view {

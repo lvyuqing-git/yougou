@@ -1,14 +1,15 @@
 <view>
   <!-- 底部操作栏 -->
   <view class="accounts">
-    <view class="left">全选</view>
+  <icon type="success" color="{{isAllShow ? 'red' : 'black'}}" bindtap="isAllShow" data-index="{{index}}"></icon>
+    <view class="left"> 全选</view>
     <view class="center">
       <view class="centerbox">
         <text>合计：￥{{total}}</text>
         <text>包含运费</text>
       </view>
     </view>
-    <view class="right">结算（3）</view>
+    <view class="right">结算（{{getNumber}}）</view>
   </view>
   <!-- 没有商品状态购物车样式 -->
   <view class="sccar" wx:if="{{carData}}">
@@ -42,7 +43,7 @@
   <view class="commoditylist">
   <view class="commodity" wx:for="{{commodityData}}" wx:key="index">
       <view class="icon" >
-        <icon type="success" color="red"></icon>
+        <icon type="success" color="{{item.isShow ? 'red' : 'black'}}" bindtap="isShow" data-index="{{index}}"></icon>
       </view>
       <view class="img">
         <image src="{{item.goods_small_logo}}" mode="aspectFill"></image>

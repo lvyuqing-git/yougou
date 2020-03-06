@@ -24,7 +24,8 @@ Page({
           goods_price,
           goods_small_logo,
           goods_name,
-          goods_number: 1
+          goods_number: 1,
+          isShow : true
         }]
       })
       wx.showToast({
@@ -38,7 +39,8 @@ Page({
             goods_price,
             goods_small_logo,
             goods_name,
-            goods_number: 1
+            goods_number: 1,
+            isShow: true
           }
         ]
       })
@@ -63,7 +65,8 @@ Page({
           goods_price,
           goods_small_logo,
           goods_name,
-          goods_number: 1
+          goods_number: 1,
+          isShow: true
         })
       }
       wx.setStorage({
