@@ -17,13 +17,19 @@
   </view>
 
   <!-- 有商品状态购物车样式 -->
-  <view class="userinfo">
+  <view class="userinfo" wx:if="{{false}}">
     <view class="consignee">
       <text>收货人：苏</text>
       <text>15360562781</text>
     </view>
     <view class="site">
       收货地址：广东省广州市天河区主机路
+    </view>
+  </view>
+  <view class="userinfo">
+    <view class="dizhi">
+      点击设置收货地址
+      <view></view>
     </view>
   </view>
   <view class="flower">
@@ -34,26 +40,26 @@
     <text class="iconfont icon-dianpu"></text> 优购生活馆
   </view>
   <!-- 购物商品列表 -->
-  <checkbox-group>
-    <label class="checkbox">
-      <view class="shangpinitem">
-        <view class="btn">
-          <checkbox value="" checked="" />
-        </view>
-        <view class="shangpin">
-          <view class="left">
-          </view>
-          <view class="right">
-            <text>出出出粗出出出出出粗话粗粗</text>
-            <text>￥279</text>
-            <view class="operation">
-              <view>-</view>
-              <view class="textcenter">3</view>
-              <view>+</view>
-            </view>
+  <view class="commoditylist">
+  <view class="commodity" wx:for="{{10}}">
+      <view class="icon" >
+        <icon type="success" color="red"></icon>
+      </view>
+      <view class="img">
+        <image src="https://img30.360buyimg.com/jdcms/s300x300_jfs/t1/3405/18/3537/69901/5b997c0aE5dc8ed9f/a2c208410ae84d1f.jpg.webp" mode="aspectFill"></image>
+      </view>
+      <view class="right">
+        <view class="commodityname">购物商品列表购物商品列表购物商品列表购物商品列表购物商品列表购物商品列表购物商品列表购物商品列表</view>
+        <view class="operation">
+          <text class="price">￥270</text>
+          <view class="number">
+            <view class="btn">-</view>
+            <input value="1"></input>
+            <view class="btn">+</view>
           </view>
         </view>
       </view>
-    </label>
-  </checkbox-group>
+  </view>
+    
+  </view>
 </view>

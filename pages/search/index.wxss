@@ -5,16 +5,14 @@
   justify-content: space-between;
   background: #efefef;
   padding: 20rpx;
-
 }
 
 .searchbox .search {
- width: 100%;
+  width: 100%;
   display: flex;
   border-radius: 5px;
   align-items: center;
   background: #fff;
- 
   box-sizing: border-box;
   font-size: 26rpx;
 }
@@ -27,13 +25,12 @@
   width: 160rpx;
   font-size: 24rpx;
   color: #4b4b4b;
-   margin-left: 20rpx;
+  margin-left: 20rpx;
 }
 
-.contai{
+.contai {
   height: 100vh;
 }
-
 
 /* 搜索历史 */
 
@@ -87,26 +84,28 @@
 }
 
 /* 搜索结果列表 */
-.list{
- height: 60vh;
+
+.list {
+  height: 60vh;
   overflow: hidden;
 }
+
 .inputsearchitem {
   display: felx;
   font-size: 24rpx;
   padding: 20rpx;
   border-bottom: 1px solid #eee;
- 
 }
 
 .inputsearchitem .iconfont {
   margin-right: 20rpx;
   font-size: 24rpx;
 }
-.inputsearchitem .text{
+
+.inputsearchitem .text {
   display: inline-block;
   width: 650rpx;
-    overflow: hidden;
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
