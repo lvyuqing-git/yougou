@@ -8,7 +8,9 @@
       <text class="iconfont icon-kefu"></text> 联系客服
     </view>
     <view>
+    <navigator url="../cart/index" open-type="switchTab">
       <text class="iconfont icon-gouwuche"></text> 购物车
+    </navigator>
     </view>
     <view class="addcar" bindtap="addCar">
       加入购物车

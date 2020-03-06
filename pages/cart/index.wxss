@@ -165,7 +165,7 @@
 }
 
 .operation .number input {
-  width: 30rpx;
+  width: 50rpx;
 }
 
 .operation .number view.btn {
