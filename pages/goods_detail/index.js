@@ -16,7 +16,6 @@ Page({
   },
   addCar() {
     let { goods_id, goods_price, goods_small_logo, goods_name } = this.data.commodityInfo
-
     if (!this.data.commodityData[0]) {
       wx.setStorage({
         key: "commodityData",
@@ -27,6 +26,10 @@ Page({
           goods_name,
           goods_number: 1
         }]
+      })
+      wx.showToast({
+        title: '加入购物车',
+        icon: 'success',
       })
       this.setData({
         commodityData: [
@@ -39,29 +42,35 @@ Page({
           }
         ]
       })
-
     } else {
-      console.log('aaaaaaa')
       let exist = this.data.commodityData.some((item) => {
-        item.goods_number += 1
+        if (item.goods_id === goods_id){
+          wx.showToast({
+            title: '+1',
+            icon: 'success',
+          })
+          item.goods_number += 1
+        }
         return item.goods_id === goods_id
       })
       if (!exist) {
+        wx.showToast({
+          title: '加入购物车',
+          icon: 'success',
+        })
         this.data.commodityData.unshift({
           goods_id,
           goods_price,
           goods_small_logo,
-          goods_name
+          goods_name,
+          goods_number: 1
         })
       }
-
       wx.setStorage({
         key: "commodityData",
         data: this.data.commodityData
       })
-
     }
-
   },
   onLoad: function (options) {
     this.setData({
@@ -82,7 +91,6 @@ Page({
         urls: arr
       })
     })
-
     wx.getStorage({
       key: 'commodityData',
       success: (res) => {

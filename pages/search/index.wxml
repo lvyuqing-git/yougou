@@ -20,8 +20,7 @@
   <!-- 搜索时显示的表单 -->
   <view class="list" >
     <view wx:for="{{inputSearchList}}" wx:key="index" class="inputsearchitem" data-onlyId="onlyId">
-      <!-- <navigator url="../goods_list/index?query={{value}}"> -->
-      <navigator >
+      <navigator url="../goods_list/index?query={{value}}">
         <text class="iconfont icon-sousuokuang"></text>
         <text class="text">{{item.goods_name}}</text>
       </navigator>
