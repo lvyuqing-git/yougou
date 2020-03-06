@@ -17,19 +17,18 @@
   </view>
 
   <!-- 有商品状态购物车样式 -->
-  <view class="userinfo" wx:if="{{false}}">
+  <view class="userinfo" wx:if="{{addressInfo.userName}}">
     <view class="consignee">
-      <text>收货人：苏</text>
-      <text>15360562781</text>
+      <text>收货人：{{addressInfo.userName}}</text>
+      <text>{{addressInfo.telNumber}}</text>
     </view>
     <view class="site">
-      收货地址：广东省广州市天河区主机路
+      收货地址：{{addressInfo.address}}
     </view>
   </view>
-  <view class="userinfo">
-    <view class="dizhi">
+  <view class="userinfo" wx:if="{{!addressInfo.userName}}">
+    <view class="dizhi" bindtap="getAddress">
       点击设置收货地址
-      <view></view>
     </view>
   </view>
   <view class="flower">
@@ -41,7 +40,7 @@
   </view>
   <!-- 购物商品列表 -->
   <view class="commoditylist">
-  <view class="commodity" wx:for="{{10}}">
+  <view class="commodity" wx:for="{{10}}" wx:key="index">
       <view class="icon" >
         <icon type="success" color="red"></icon>
       </view>

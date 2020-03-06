@@ -71,19 +71,24 @@
   display: flex;
   justify-content: space-between;
 }
+
 .userinfo .dizhi {
   display: flex;
   justify-content: space-between;
-  
 }
-.userinfo .dizhi view{
+
+.userinfo .dizhi::after {
+  content: '';
+  display: block;
   border-left: 1px solid black;
   border-top: 1px solid black;
   height: 20rpx;
   width: 20rpx;
   transform: rotate(135deg);
+  margin: auto 0;
   margin-right: 20rpx;
 }
+
 /* 花条 */
 
 .flower image {
@@ -100,19 +105,22 @@
 }
 
 /* 购物车商品列表 */
-.commoditylist{
+
+.commoditylist {
   padding-bottom: 100rpx;
 }
+
 .commodity {
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 20rpx;
- 
 }
+
 .img {
   margin-left: 20rpx;
 }
+
 .img image {
   width: 155rpx;
   height: 155rpx;
