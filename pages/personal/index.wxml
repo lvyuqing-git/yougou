@@ -1,2 +1,54 @@
-<!--pages/personal/index.wxml-->
-<text>pages/personal/index.wxml</text>
+<view class="user-info">
+<!-- 头部 -->
+  <view class="user-portrait">
+    <text class="iconfont icon-dakaihuihua"></text>
+    <view class="img">
+      <image src="https://img10.360buyimg.com/babel/s1180x940_jfs/t1/90966/12/13849/94449/5e5dd103E999afa6f/263c188c47d49894.jpg.webp"></image>
+      <view>轻松登录/注册</view>
+    </view>
+    <text class="iconfont icon-icon_set_up"></text>
+  </view>
+  <!-- 商品操作栏 -->
+  <view class="collect">
+    <view class="collect-item">
+      <view>0</view>
+      <view>收藏的店铺</view>
+    </view>
+    <view class="collect-item">
+      <view>0</view>
+      <view>收藏的店铺</view>
+    </view>
+    <view class="collect-item">
+      <view>0</view>
+      <view>收藏的店铺</view>
+    </view>
+    <view class="collect-item">
+      <view>0</view>
+      <view>收藏的店铺</view>
+    </view>
+  </view>
+  <!-- 我的订单 -->
+  <view class="box-bottom">
+    <view class="order-number">
+      我的订单
+    </view>
+    <view class="user-operation">
+      <view class="operation-item">
+        <text class="iconfont icon-daifukuan"></text>
+        <text>代付款</text>
+      </view>
+       <view class="operation-item">
+        <text class="iconfont icon-daifukuan"></text>
+        <text>代付款</text>
+      </view>
+       <view class="operation-item">
+        <text class="iconfont icon-daifukuan"></text>
+        <text>代付款</text>
+      </view>
+       <view class="operation-item">
+        <text class="iconfont icon-daifukuan"></text>
+        <text>代付款</text>
+      </view>
+    </view>
+  </view>
+</view>
