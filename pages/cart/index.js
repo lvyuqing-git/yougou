@@ -89,12 +89,13 @@ Page({
   isShow(e){
     let { index } = e.target.dataset
     this.data.commodityData[index].isShow = !this.data.commodityData[index].isShow
-    this.data.isAllShow = this.data.commodityData.some((item) => {
-      return item.isShow == false
+    let isAllShow= this.data.commodityData.some((item) => {
+      // return item.isShow == false
+      return !item.isShow
     })
     this.setData({
       commodityData: this.data.commodityData,
-      isAllShow: !this.data.isAllShow
+      isAllShow: !isAllShow
     })
     this.calculateTotal()
     wx.setStorage({
@@ -109,21 +110,18 @@ Page({
   },
   // 全选
   isAllShow(){
-    this.setData({
-      isAllShow: !this.data.isAllShow,
-    })
     this.data.commodityData.forEach((item)=>{
-      item.isShow = this.data.isAllShow
+      item.isShow = !this.data.isAllShow
     })
     this.setData({
-      commodityData: this.data.commodityData
+      commodityData: this.data.commodityData,
+      isAllShow: !this.data.isAllShow,
     })
     wx.setStorage({
       key: "commodityData",
       data: this.data.commodityData
     })
     this.calculateTotal()
-   
     wx.setStorage({
       key: "isAllShow",
       data: this.data.isAllShow

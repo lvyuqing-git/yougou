@@ -4,7 +4,7 @@ Page({
     commodityInfo: {},
     urls: [],
     id: '',
-    commodityData: []
+    // commodityData: []
   },
   previewImage(e) {
     let { index } = e.currentTarget.dataset
