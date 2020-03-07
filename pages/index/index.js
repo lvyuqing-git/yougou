@@ -36,7 +36,6 @@ Page({
     request({
       url: '/api/public/v1/home/floordata'
     }).then((res)=>{
-      console.log(res)
       this.setData({
         floorList: res.data.message
       })

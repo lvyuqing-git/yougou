@@ -4,7 +4,7 @@
 
 .accounts {
   position: fixed;
-  bottom: 0;
+  bottom: 48px;
   display: flex;
   justify-content: space-around;
   height: 100rpx;
