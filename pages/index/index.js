@@ -7,8 +7,15 @@ Page({
     floorList : [],
 
   },
+  onShow(){
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 0
+      })
+    }
+  },
   onLoad: function () {
-
     // 轮播图
     request({
       url: '/api/public/v1/home/swiperdata'

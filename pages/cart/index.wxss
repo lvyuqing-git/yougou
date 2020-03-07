@@ -95,6 +95,7 @@
 .flower image {
   display: block;
   height: 16rpx;
+  width: 100%;
 }
 
 /* 优购生活馆 */

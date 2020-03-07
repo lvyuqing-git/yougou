@@ -8,6 +8,21 @@ Page({
     isAllShow : true,
     getNumber : 0
   },
+  //输入框失去焦点
+  inputBlur(e) {
+    let { value } = e.detail
+    let { index } = e.target.dataset
+    this.data.commodityData[index].goods_number = value
+    this.setData({
+      commodityData : this.data.commodityData
+    })
+    this.calculateTotal()
+    wx.setStorage({
+      key: "commodityData",
+      data: this.data.commodityData
+    })
+
+  },
   onLoad: function (options) {
     //获取地址信息
     wx.getStorage({
@@ -47,7 +62,14 @@ Page({
         this.calculateTotal()
       }
     })
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 2
+      })
+    }
   },
+
   //计算总价格
   calculateTotal(){
     let total = 0
@@ -96,11 +118,12 @@ Page({
     this.setData({
       commodityData: this.data.commodityData
     })
-    this.calculateTotal()
     wx.setStorage({
       key: "commodityData",
       data: this.data.commodityData
     })
+    this.calculateTotal()
+   
     wx.setStorage({
       key: "isAllShow",
       data: this.data.isAllShow
@@ -150,10 +173,10 @@ Page({
       })
       
     }
-    this.calculateTotal()
     this.setData({
       commodityData: this.data.commodityData
     })
+    this.calculateTotal()
     wx.setStorage({
       key: "commodityData",
       data: this.data.commodityData

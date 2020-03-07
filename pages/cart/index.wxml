@@ -54,7 +54,7 @@
           <text class="price">￥{{item.goods_price}}</text>
           <view class="number">
             <view class="btn" bindtap="calculate" data-number="{{-1}}" data-index="{{index}}">-</view>
-            <input value="{{item.goods_number}}"></input>
+            <input value="{{item.goods_number}}" bindblur="inputBlur" data-index="{{index}}"></input>
             <view class="btn" bindtap="calculate" data-number="{{1}}" data-index="{{index}}">+</view>
           </view>
         </view>
