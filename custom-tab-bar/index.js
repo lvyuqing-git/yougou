@@ -30,12 +30,11 @@ Component({
   },
   attached() {
     let number = (wx.getStorageSync('commodityData') || []).length
-    console.log(number)
+    
   },
   pageLifetimes:{
     show(){
       let number = (wx.getStorageSync('commodityData') || []).length
-      console.log(number)
     }
   },
   methods: {

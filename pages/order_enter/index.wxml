@@ -1,0 +1,33 @@
+<view>
+  <!-- 头部切换栏 -->
+  <view class="payment-title-list">
+    <view class="title-item {{current == index ? 'active' : ''}}" wx:for="{{paymentTitleList}}" wx:key="index" bindtap="clickTitleList" data-index="{{index}}">{{item}}</view>
+  </view>
+  <!-- 商品列表信息 -->
+  <view class="commodity-list">
+    <view class="commodity" wx:for="{{10}}" wx:key="index" >
+      <view class="commodity-item">
+        <view class="left">
+          <image src="https://img12.360buyimg.com/pop/s1180x940_jfs/t1/108270/29/8026/46738/5e63422dEdc88ca74/7de3a33968ffbbdd.jpg.webp" mode="aspctedFill"></image>
+        </view>
+        <view class="right">
+          <view class="commodity-name">
+            商品列表信息商品列表信息商品列表信息商品列表信息商品列表信息商品列表信息商品列表信息
+          </view>
+          <view class="commodity-price">
+            <view class="price">￥999</view>
+            <view class="number">x1</view>
+          </view>
+        </view>
+      </view>
+      <view class="price-info">
+        共计1件商品 总计：￥4099（含运费0.00）
+      </view>
+      <!-- /* 订单号 */ -->
+      <view class="order-number">
+        <view>订单号：000000000000000000000000</view>
+        <view class="payment">支付</view>
+      </view>
+    </view>
+  </view>
+</view>
