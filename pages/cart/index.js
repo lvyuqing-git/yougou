@@ -1,12 +1,52 @@
 // pages/cart/index.js
+import request from '../../utils/request.js'
 Page({
   data: {
-    carData : false,
-    addressInfo : {},
-    commodityData : [],
-    total : 0,
-    isAllShow : true,
-    getNumber : 0
+    carData: false,
+    addressInfo: {},
+    commodityData: [],
+    total: 0,
+    isAllShow: true,
+    getNumber: 0,
+    userDetail: {
+      code: ''
+    }
+  },
+  //结算
+  pay() {
+    // request({
+    //   url : ''
+    // })
+
+
+  },
+  bindgetuserinfo(res) {
+    let { detail } = res
+    console.log(detail)
+
+    this.data.userDetail = detail
+    wx.login({
+      success: (res) => {
+        this.data.userDetail.code = res.code
+        delete this.data.userDetail.errMsg
+        delete this.data.userDetail.userInfo
+        console.log(this.data.userDetail)
+
+        this.setData({
+          userDetail: this.data.userDetail
+        })
+        request({
+          url: '/api/public/v1/users/wxlogin',
+          method : 'POST',
+          data: this.data.userDetail,
+        }).then((res)=>{
+          wx.setStorageSync("token", res.data.message.token)
+          console.log(res)
+        })
+      }
+    })
+
+
   },
   //输入框失去焦点
   inputBlur(e) {
@@ -14,7 +54,7 @@ Page({
     let { index } = e.target.dataset
     this.data.commodityData[index].goods_number = value
     this.setData({
-      commodityData : this.data.commodityData
+      commodityData: this.data.commodityData
     })
     this.calculateTotal()
     wx.setStorage({
@@ -27,7 +67,7 @@ Page({
     //获取地址信息
     wx.getStorage({
       key: 'address',
-      success:(res)=> {
+      success: (res) => {
         this.setData({
           addressInfo: res.data
         })
@@ -52,7 +92,7 @@ Page({
       }
     })
   },
-  onShow(){
+  onShow() {
     wx.getStorage({
       key: 'commodityData',
       success: (res) => {
@@ -71,12 +111,12 @@ Page({
   },
 
   //计算总价格
-  calculateTotal(){
+  calculateTotal() {
     let total = 0
     let getNumber = 0
     this.data.commodityData.forEach((item) => {
-      if(item.isShow){
-        getNumber+=1
+      if (item.isShow) {
+        getNumber += 1
         total += item.goods_price * item.goods_number
       }
     })
@@ -86,10 +126,10 @@ Page({
     })
   },
   // 点击选中
-  isShow(e){
+  isShow(e) {
     let { index } = e.target.dataset
     this.data.commodityData[index].isShow = !this.data.commodityData[index].isShow
-    let isAllShow= this.data.commodityData.some((item) => {
+    let isAllShow = this.data.commodityData.some((item) => {
       // return item.isShow == false
       return !item.isShow
     })
@@ -109,8 +149,8 @@ Page({
 
   },
   // 全选
-  isAllShow(){
-    this.data.commodityData.forEach((item)=>{
+  isAllShow() {
+    this.data.commodityData.forEach((item) => {
       item.isShow = !this.data.isAllShow
     })
     this.setData({
@@ -128,12 +168,12 @@ Page({
     })
   },
   //添加地址
-  getAddress(){
+  getAddress() {
     wx.chooseAddress({
-      success : (res)=> {
+      success: (res) => {
         let obj = {
           userName: res.userName,
-          address: res.provinceName + res.cityName + res.countyName + res.detailInfo ,
+          address: res.provinceName + res.cityName + res.countyName + res.detailInfo,
           telNumber: res.telNumber
         }
         this.setData({
@@ -147,16 +187,16 @@ Page({
     })
   },
   //操作数量
-  calculate(e){
-    let { number,index } = e.target.dataset
+  calculate(e) {
+    let { number, index } = e.target.dataset
     this.data.commodityData[index].goods_number += number
-    if (this.data.commodityData[index].goods_number <= 0){
+    if (this.data.commodityData[index].goods_number <= 0) {
       wx.showModal({
         title: '提示',
         content: '是否删除该商品',
-        success:(res)=> {
+        success: (res) => {
           if (res.confirm) {
-            this.data.commodityData.splice(index,1)
+            this.data.commodityData.splice(index, 1)
           } else if (res.cancel) {
             this.data.commodityData[index].goods_number += 1
           }
@@ -169,7 +209,7 @@ Page({
           })
         }
       })
-      
+
     }
     this.setData({
       commodityData: this.data.commodityData

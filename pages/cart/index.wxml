@@ -15,7 +15,9 @@
         <text>包含运费</text>
       </view>
     </view>
-    <view class="right">结算（{{getNumber}}）</view>
+    <view class="right" bindtap="pay" >结算（{{getNumber}}）
+    
+    </view>
   </view>
   <!-- 有商品状态购物车样式 -->
   <view class="userinfo" wx:if="{{addressInfo.userName}}">
@@ -63,4 +65,5 @@
 
   </view>
   </view>
+  <button open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo">登录</button>
 </view>
