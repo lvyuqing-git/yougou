@@ -14,35 +14,79 @@ Page({
   },
   //结算
   pay() {
+
+    // let token = wx.getStorageSync("token")
     // request({
-    //   url : ''
+    //   url: '/my/orders/req_unifiedorder',
+    //   header : {
+    //     token: token
+    //   },
+    //   data : {
+    //     order_number : 1
+    //   }
+    // }).then((res)=>{
+    //   console.log(res)
     // })
-
-
+  },
+  //获取订单信息
+  getOrderInfo(){
+  
+    let arr = this.data.commodityData.map((i) => {
+      if (i.isShow) {
+        return {
+          goods_id: i.goods_id,
+          goods_number: i.goods_number,
+          goods_price: i.goods_price
+        }
+      }
+    })
+    request({
+      url: '/api/public/v1/my/orders/create',
+      method: "POST",
+      header: {
+        Authorization: wx.getStorageSync("token")
+      },
+      data: {
+        order_price: this.data.total,
+        consignee_addr: wx.getStorageSync("address").address,
+        goods: arr
+      }
+    })
+      .then((res) => {
+        console.log(res)
+      })
   },
   bindgetuserinfo(res) {
     let { detail } = res
-    console.log(detail)
-
     this.data.userDetail = detail
     wx.login({
       success: (res) => {
-        this.data.userDetail.code = res.code
-        delete this.data.userDetail.errMsg
-        delete this.data.userDetail.userInfo
-        console.log(this.data.userDetail)
+        if (!wx.getStorageSync("token")) {
+          this.data.userDetail.code = res.code
+          delete this.data.userDetail.errMsg
+          delete this.data.userDetail.userInfo
+          this.setData({
+            userDetail: this.data.userDetail
+          })
+          request({
+            url: '/api/public/v1/users/wxlogin',
+            method: 'POST',
+            data: this.data.userDetail,
+          }).then((res) => {
+            console.log(res)
+            wx.setStorageSync("token", res.data.message.token)
+            this.getOrderInfo()
+            wx.navigateTo({
+              url: '../order_enter/index',
+            })
+          })
+        } else {
+          this.getOrderInfo()
+          wx.navigateTo({
+            url: '../order_enter/index',
+          })
+        }
 
-        this.setData({
-          userDetail: this.data.userDetail
-        })
-        request({
-          url: '/api/public/v1/users/wxlogin',
-          method : 'POST',
-          data: this.data.userDetail,
-        }).then((res)=>{
-          wx.setStorageSync("token", res.data.message.token)
-          console.log(res)
-        })
       }
     })
 
@@ -105,6 +149,7 @@ Page({
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()) {
       this.getTabBar().setData({
+        number: (wx.getStorageSync("commodityData") || []).length,
         selected: 2
       })
     }
@@ -206,6 +251,9 @@ Page({
           wx.setStorage({
             key: "commodityData",
             data: this.data.commodityData
+          })
+          this.getTabBar().setData({
+            number: (wx.getStorageSync("commodityData") || []).length,
           })
         }
       })

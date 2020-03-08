@@ -5,14 +5,14 @@
   </view>
   <!-- 商品列表信息 -->
   <view class="commodity-list">
-    <view class="commodity" wx:for="{{10}}" wx:key="index" >
+    <view class="commodity" wx:for="{{commodityList}}" wx:key="index" >
       <view class="commodity-item">
         <view class="left">
           <image src="https://img12.360buyimg.com/pop/s1180x940_jfs/t1/108270/29/8026/46738/5e63422dEdc88ca74/7de3a33968ffbbdd.jpg.webp" mode="aspctedFill"></image>
         </view>
         <view class="right">
           <view class="commodity-name">
-            商品列表信息商品列表信息商品列表信息商品列表信息商品列表信息商品列表信息商品列表信息
+            商品列表信息商品列表信息商品列表信息商品列表信息商品列表信息商品列表信息商品列表信
           </view>
           <view class="commodity-price">
             <view class="price">￥999</view>

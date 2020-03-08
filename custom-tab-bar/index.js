@@ -3,6 +3,7 @@ Component({
     selected: 0,
     color: "#7A7E83",
     selectedColor: "#000",
+    number: (wx.getStorageSync('commodityData') || []).length,
     list: [{
       "pagePath": "/pages/index/index",
       "text": "首页",
@@ -29,14 +30,12 @@ Component({
     }]
   },
   attached() {
-    let number = (wx.getStorageSync('commodityData') || []).length
-    
+    // let number = 
+    // this.dataset({
+    //   number
+    // })
   },
-  pageLifetimes:{
-    show(){
-      let number = (wx.getStorageSync('commodityData') || []).length
-    }
-  },
+ 
   methods: {
     switchTab(e) {
       const data = e.currentTarget.dataset

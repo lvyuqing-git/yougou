@@ -6,12 +6,10 @@ Page({
    */
   data: {
     paymentTitleList : ['全部','待付款','已付款','退款/退货'],
-    current : 0
+    current : 0,
+    commodityList: wx.getStorageSync("commodityData")
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
 
   },

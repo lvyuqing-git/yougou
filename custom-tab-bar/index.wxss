@@ -1,3 +1,17 @@
+.car-length{
+  position: absolute;
+  right: 236rpx;
+  top: 5rpx;
+  width: 14px;
+  height: 14px;
+  background: red;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 14px;
+  z-index: 999;
+}
 .tab-bar {
   position: fixed;
   bottom: 0;

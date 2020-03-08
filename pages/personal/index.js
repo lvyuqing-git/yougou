@@ -4,7 +4,8 @@ Page({
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()) {
       this.getTabBar().setData({
-        selected: 3
+        selected: 3,
+        number: (wx.getStorageSync("commodityData") || []).length,
       })
     }
   },
