@@ -22,7 +22,21 @@ Page({
         order_number: this.data.orderInfo[index].order_number
       }
     }).then((res)=>{
-      console.log(res)
+      let { pay} = res.data.message
+      wx.requestPayment({
+        timeStamp: pay.timeStamp,
+        nonceStr: pay.nonceStr,
+        package: pay.package,
+        signType: 'MD5',
+        paySign: pay.paySign,
+        success(res) {
+          console.log(res)
+         },
+        fail(res) {
+          console.log(res)
+
+         }
+      })
     })
   },
   onLoad: function (options) {

@@ -69,7 +69,6 @@ Page({
       })
   },
 
-
   bindgetuserinfo(res) {
     let { detail } = res
     this.data.userDetail = detail
@@ -87,7 +86,6 @@ Page({
             method: 'POST',
             data: this.data.userDetail,
           }).then((res) => {
-            console.log(res)
             wx.setStorageSync("token", res.data.message.token)
             this.getOrderInfo()
             wx.navigateTo({
