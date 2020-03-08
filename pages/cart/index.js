@@ -29,14 +29,13 @@ Page({
     // })
   },
   //获取订单信息
-  getOrderInfo(){
-  
+  getOrderInfo() {
     let arr = this.data.commodityData.map((i) => {
       if (i.isShow) {
         return {
           goods_id: i.goods_id,
           goods_number: i.goods_number,
-          goods_price: i.goods_price
+          goods_price: i.goods_price,
         }
       }
     })
@@ -53,9 +52,24 @@ Page({
       }
     })
       .then((res) => {
-        console.log(res)
+        let arr = this.data.commodityData.map((i) => {
+          if (i.isShow) {
+            return {
+              goods_id: i.goods_id,
+              goods_number: i.goods_number,
+              goods_price: i.goods_price,
+              goods_small_logo: i.goods_small_logo,
+              goods_name: i.goods_name,
+            }
+          }
+        })
+        let orderInfo = wx.getStorageSync("orderInfo") || []
+        orderInfo.push({ arr: arr, order_number: res.data.message.order_number, total: this.data.total })
+        wx.setStorageSync("orderInfo", orderInfo)
       })
   },
+
+
   bindgetuserinfo(res) {
     let { detail } = res
     this.data.userDetail = detail
