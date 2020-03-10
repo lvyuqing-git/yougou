@@ -14,7 +14,12 @@
   background: #fff;
   padding-left: 20rpx;
 }
-
+.accounts .btn{
+  position: absolute;
+  right: 0;
+  top: 10rpx;
+ opacity: 0;
+}
 .accounts >view {
   width: 33%;
   height: 100rpx;
