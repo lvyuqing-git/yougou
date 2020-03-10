@@ -1,10 +1,14 @@
 <view class="user-info">
-<!-- 头部 -->
+  <!-- 头部 -->
   <view class="user-portrait">
     <text class="iconfont icon-dakaihuihua"></text>
     <view class="img">
-      <image src="https://img10.360buyimg.com/babel/s1180x940_jfs/t1/90966/12/13849/94449/5e5dd103E999afa6f/263c188c47d49894.jpg.webp"></image>
-      <view>轻松登录/注册</view>
+      <view class="useravatar">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <view class="nickname">
+        <open-data type="userNickName"></open-data>
+      </view>
     </view>
     <text class="iconfont icon-icon_set_up"></text>
   </view>
@@ -37,18 +41,21 @@
         <text class="iconfont icon-daifukuan"></text>
         <text>代付款</text>
       </view>
-       <view class="operation-item">
+      <view class="operation-item">
         <text class="iconfont icon-daifukuan"></text>
         <text>代付款</text>
       </view>
-       <view class="operation-item">
+      <view class="operation-item">
         <text class="iconfont icon-daifukuan"></text>
         <text>代付款</text>
       </view>
-       <view class="operation-item">
+      <view class="operation-item">
         <text class="iconfont icon-daifukuan"></text>
         <text>代付款</text>
       </view>
     </view>
+    <view class="address" bindtap="addressInfo">地址管理</view>
+    <view class="service" bindtap="service">联系客服 <text>400-618-4000</text> </view>
+    <view class="service yijian">意见反馈</view>
   </view>
 </view>

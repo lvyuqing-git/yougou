@@ -10,23 +10,12 @@ Page({
     getNumber: 0,
     userDetail: {
       code: ''
-    }
+    },
+    token : ''
   },
   //结算
   pay() {
 
-    // let token = wx.getStorageSync("token")
-    // request({
-    //   url: '/my/orders/req_unifiedorder',
-    //   header : {
-    //     token: token
-    //   },
-    //   data : {
-    //     order_number : 1
-    //   }
-    // }).then((res)=>{
-    //   console.log(res)
-    // })
   },
   //获取订单信息
   getOrderInfo() {
@@ -39,37 +28,46 @@ Page({
         }
       }
     })
-    request({
-      url: '/api/public/v1/my/orders/create',
-      method: "POST",
-      header: {
-        Authorization: wx.getStorageSync("token")
-      },
-      data: {
-        order_price: this.data.total,
-        consignee_addr: wx.getStorageSync("address").address,
-        goods: arr
-      }
-    })
-      .then((res) => {
-        let arr = this.data.commodityData.map((i) => {
-          if (i.isShow) {
-            return {
-              goods_id: i.goods_id,
-              goods_number: i.goods_number,
-              goods_price: i.goods_price,
-              goods_small_logo: i.goods_small_logo,
-              goods_name: i.goods_name,
-            }
-          }
-        })
-        let orderInfo = wx.getStorageSync("orderInfo") || []
-        orderInfo.push({ arr: arr, order_number: res.data.message.order_number, total: this.data.total })
-        wx.setStorageSync("orderInfo", orderInfo)
-      })
+    
+     request({
+       url: '/api/public/v1/my/orders/create',
+       method: "POST",
+       header: {
+         Authorization: this.data.token
+       },
+       data: {
+         order_price: this.data.total,
+         consignee_addr: wx.getStorageSync("address").address,
+         goods: arr
+       }
+     })
+       .then((res) => {
+         console.log(res)
+         let arr = this.data.commodityData.map((i) => {
+           if (i.isShow) {
+             return {
+               goods_id: i.goods_id,
+               goods_number: i.goods_number,
+               goods_price: i.goods_price,
+               goods_small_logo: i.goods_small_logo,
+               goods_name: i.goods_name,
+             }
+           }
+         })
+         let orderInfo = wx.getStorageSync("orderInfo") || []
+         orderInfo.push({ arr: arr, order_number: res.data.message.order_number, total: this.data.total })
+         wx.setStorageSync("orderInfo", orderInfo)
+       })
   },
 
   bindgetuserinfo(res) {
+    if (!wx.getStorageSync("address")){
+      wx.showToast({
+        title: '请先选择地址',
+        icon: 'error',
+      })
+      return
+    }
     let { detail } = res
     this.data.userDetail = detail
     wx.login({
@@ -86,6 +84,10 @@ Page({
             method: 'POST',
             data: this.data.userDetail,
           }).then((res) => {
+            console.log(res)
+            this.setData({
+              token: res.data.message.token
+            })
             wx.setStorageSync("token", res.data.message.token)
             this.getOrderInfo()
             wx.navigateTo({
@@ -93,6 +95,7 @@ Page({
             })
           })
         } else {
+          
           this.getOrderInfo()
           wx.navigateTo({
             url: '../order_enter/index',

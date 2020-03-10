@@ -3,7 +3,7 @@ Page({
   data: {
     paymentTitleList: ['全部', '待付款', '已付款', '退款/退货'],
     current: 0,
-    orderInfo: wx.getStorageSync("orderInfo"),
+    orderInfo: [],
     totalNumber: 0,
     arra: []
 
@@ -41,15 +41,17 @@ Page({
   },
   onLoad: function (options) {
     let arra = []
-    wx.getStorageSync("orderInfo").forEach((i) => {
+    this.data.orderInfo.forEach((i) => {
       let number = 0
       i.arr.forEach(index => {
         number += index.goods_number
       })
       arra.push(number)
     })
+   
     this.setData({
-      arra: arra
+      arra: arra,
+      orderInfo:wx.getStorageSync("orderInfo"),
     })
   },
   clickTitleList(e) {

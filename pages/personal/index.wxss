@@ -1,32 +1,32 @@
-.user-info{
-  position: relative;
-}
 .user-portrait {
   height: 400rpx;
-  background: #eb4450;
+  background: #ff2b49;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
 }
 
-.user-portrait .img image {
+.user-portrait .img .useravatar {
   height: 133rpx;
   width: 133rpx;
   border: 2px solid #fff;
   border-radius: 50%;
-  margin:0 40rpx;
+  margin: 0 40rpx;
+  overflow: hidden;
 }
-.user-portrait .img view{
-font-size: 30rpx;
-text-align: center;
+
+.user-portrait .img .nickname {
+  font-size: 30rpx;
+  text-align: center;
 }
 
 /* 收藏操作 */
-.collect{
-  position: absolute;
+
+.collect {
+  position: relative;
   display: flex;
-  top: 380rpx;
+  top: -20rpx;
   left: 14rpx;
   justify-content: space-between;
   align-items: center;
@@ -34,35 +34,87 @@ text-align: center;
   height: 120rpx;
   width: 96%;
   border-radius: 3px;
-  background:#fff;
+  background: #fff;
 }
-.collect .collect-item{
+
+.collect .collect-item {
   text-align: center;
   padding: 20rpx;
 }
 
-.box-bottom{
-  margin-top: 120rpx;
-  border-top: 25rpx solid #f4f4f4;
-   padding:0 20rpx;
+.collect .collect-item view {
+  line-height: 50rpx;
 }
-.box-bottom .order-number{
+
+.box-bottom {
+  border-top: 25rpx solid #f4f4f4;
+  padding: 0 20rpx;
+}
+
+.box-bottom .order-number {
   padding: 20rpx;
   border-bottom: 1px solid #eee;
 }
-.box-bottom .user-operation{
+
+.box-bottom .user-operation {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20rpx 0;
 }
-.operation-item{
+
+.operation-item {
   display: flex;
   flex-direction: column;
   text-align: center;
   font-size: 26rpx;
 }
-.operation-item .iconfont{
+
+.operation-item .iconfont {
   color: red;
+  font-size: 50rpx;
   padding-bottom: 20rpx;
+}
+
+/* //收货地址管理 */
+
+.address {
+  border-top: 20rpx solid #f4f4f4;
+  border-bottom: 20rpx solid #f4f4f4;
+  font-size: 27rpx;
+  padding: 10rpx 0;
+  position: relative;
+}
+
+.address:after {
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  transform: rotate(135deg);
+}
+
+.service {
+  display: flex;
+  font-size: 27rpx;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 80rpx;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.yijian:after {
+  content: '';
+  margin-right: 20rpx;
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  transform: rotate(135deg);
 }
